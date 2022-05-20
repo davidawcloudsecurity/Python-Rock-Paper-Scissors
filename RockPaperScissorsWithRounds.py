@@ -5,12 +5,10 @@ thisdict =	{
   "s": "Stone"
 }
 mylist = ['c', 'p', 's'] 
-user_input, x = '', '' #initialize
-user_score = 0
-machine_score = 0
-y = ''
+user_input, x, y = '', '', '' #initialize
+user_score, machine_score = 0, 0
 
-while y == '': #loop if user input has no value
+while y == '': #loop if user input has no value but encounter error if user enters string
     y = input("How many rounds: ")
 
 sessions = int(y) #force code to take it as int
@@ -59,6 +57,6 @@ while user_input != 'q' and x != '\n' and sessions != 0:
             if user_score < machine_score:
                 print(f"Machine win after {machine_score} round")
             else:
-                print("\nYou: {user_score}, Machine: {machine_score}. It's a tie")
+                print(f"\nYou: {user_score}, Machine: {machine_score}. It's a tie")
     else:
         pass #loops until user input define character
