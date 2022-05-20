@@ -8,16 +8,12 @@ mylist = ['c', 'p', 's']
 user_input, x, y, it_is = '', '', '', True #initialize
 user_score, machine_score = 0, 0
 
-while it_is: #loop if user input has no value but encounter error if user enters string
+while not y.isnumeric(): #line 11 - loop if user input has no value but encounter error if user enters string
     y = input("How many rounds: ")
-    try:
-        int(y)
-        it_is = False
-        sessions = int(y) #force code to take it as int
-    except ValueError:
-        it_is = True
 
-while user_input != 'q' and x != '\n' and sessions != 0:
+sessions = int(y) #force code to take it as int
+
+while user_input != 'q' and sessions != 0:
     x = input("S(c)issors, Pa(p)er, (S)tone, (Q)uit: ") #S(c)issors, Pa(p)er, (S)tone, (Quit)
     
     user_input = x.lower()
