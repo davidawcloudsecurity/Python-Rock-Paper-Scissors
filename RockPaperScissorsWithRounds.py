@@ -5,13 +5,17 @@ thisdict =	{
   "s": "Stone"
 }
 mylist = ['c', 'p', 's'] 
-user_input, x, y = '', '', '' #initialize
+user_input, x, y, it_is = '', '', '', True #initialize
 user_score, machine_score = 0, 0
 
-while y == '': #loop if user input has no value but encounter error if user enters string
+while it_is: #loop if user input has no value but encounter error if user enters string
     y = input("How many rounds: ")
-
-sessions = int(y) #force code to take it as int
+    try:
+        int(y)
+        it_is = False
+        sessions = int(y) #force code to take it as int
+    except ValueError:
+        it_is = True
 
 while user_input != 'q' and x != '\n' and sessions != 0:
     x = input("S(c)issors, Pa(p)er, (S)tone, (Q)uit: ") #S(c)issors, Pa(p)er, (S)tone, (Quit)
