@@ -8,8 +8,12 @@ mylist = ['c', 'p', 's']
 user_input, x = '', '' #initialize
 user_score = 0
 machine_score = 0
+y = ''
 
-sessions = int(input("How many rounds: "))
+while y == '': #loop if user input has no value
+    y = input("How many rounds: ")
+
+sessions = int(y) #force code to take it as int
 
 while user_input != 'q' and x != '\n' and sessions != 0:
     x = input("S(c)issors, Pa(p)er, (S)tone, (Q)uit: ") #S(c)issors, Pa(p)er, (S)tone, (Quit)
